@@ -1,6 +1,7 @@
 ## About the project Github-api-app
 This is a simple app which fetches the open issue for a particular github repository from the GitHub API using axios.
-
+## App Hosted in Heroku (Link)
+[https://github-api-issue.herokuapp.com/](https://github-api-issue.herokuapp.com/)
 ## GitHub API
 Link - https://api.github.com
 
