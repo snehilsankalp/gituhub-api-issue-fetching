@@ -4,10 +4,10 @@ This is a simple app which fetches the open issue for a particular github reposi
 ## GitHub API
 Link - https://api.github.com
 
-##Language Used
+## Language Used
 ReactJs
 
-##Problem Statement
+## Problem Statement
 Input:
 User can input a link to any public GitHub repository
 
@@ -18,7 +18,7 @@ Display a table with the following information-
     3.Number of open issues that were opened more than 24 hours ago but less than 7 days ago
     4.Number of open issues that were opened more than 7 days ago
 
-##Solution
+## Solution
 
 1. Made API request for on https://api.github.com using axios
 2. API endpoint as /repo
@@ -28,19 +28,19 @@ Display a table with the following information-
 6. Found the difference between the current EPOCH and Created EPOCH and updated the count of issues
 7. Generated the table once all issue count have been fetched.
 
-##Possible improvements if given more time for the solution
+## Possible improvements if given more time for the solution
 
 1. Reduce the usage of conditional rendering.
 2. Reduce the usage of conditional statements.
 3. Build more components for better re-usability of code.
 4. Enhancement of User Experience and Design.
 
-##Requirement to Run the Project
+## Requirement to Run the Project
 1.Node(npm)
 2.axios
 3.Semantic UI
 
-##Execution Instructions
+## Execution Instructions
 
 ### `npm start`
 
