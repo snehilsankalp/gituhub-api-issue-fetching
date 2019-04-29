@@ -1,68 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About the project Github-api-app
+This is a simple app which fetches the open issue for a particular github repository from the GitHub API using axios.
 
-## Available Scripts
+## GitHub API
+Link - https://api.github.com
 
-In the project directory, you can run:
+##Language Used
+ReactJs
+
+##Problem Statement
+Input:
+User can input a link to any public GitHub repository
+
+Output :
+Display a table with the following information-
+    1.Total number of open issues
+    2.Number of open issues that were opened in the last 24 hours
+    3.Number of open issues that were opened more than 24 hours ago but less than 7 days ago
+    4.Number of open issues that were opened more than 7 days ago
+
+##Solution
+
+1. Made API request for on https://api.github.com using axios
+2. API endpoint as /repo
+3. Extracted user and repository name from the URL and passed as query params.
+4. Mapped the array response to get creation date and time for all open issues
+5. Converted ISO date time format to EPOCH.
+6. Found the difference between the current EPOCH and Created EPOCH and updated the count of issues
+7. Generated the table once all issue count have been fetched.
+
+##Possible improvements if given more time for the solution
+
+1. Reduce the usage of conditional rendering.
+2. Reduce the usage of conditional statements.
+3. Build more components for better re-usability of code.
+4. Enhancement of User Experience and Design.
+
+##Requirement to Run the Project
+1.Node(npm)
+2.axios
+3.Semantic UI
+
+##Execution Instructions
 
 ### `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
