@@ -42,25 +42,30 @@ class App extends React.Component{
                         //Checking for Issues
                         if (response.data.length > 0) {
                                 i++;
-                                total = total + response.data.length; //Calculating Total issues
                                 var d = Date.now(); //Getting Current Date and Time
                                 let data = response.data;
+
                                 // Mapping the array for getting individual issue date
                                 data.map((date) => {
+                                    let pullReq= date.pull_request;
                                     date = date.created_at;
                                     date = Date.parse(date);
                                     //Finding the time difference
                                     var diff = (d - date) / 1000; //Convert epoch from milliseconds into second
                                     if (diff < 86400) {
                                         days++; //Calculating issue opened in last 24hrs
+                                        if(pullReq){days--;}
                                     }
                                     else if ((diff > 86400) && (diff < 604800)) {
                                         week++; //Calculating issues opened after 24hrs but within 7 Days
+                                        if(pullReq){week--;}
                                     }
                                     else {
                                         later++; //Calculating issues opened later than 7 days
+                                        if(pullReq){later--;}
                                     }
                                 })
+                                    total = days+week+later; //Calculating Total issues
 
 
                         }
@@ -93,6 +98,7 @@ class App extends React.Component{
         catch (err){
             if(err){
                 this.setState({search:'failed'});
+                console.log(err);
             }
         }
     }
